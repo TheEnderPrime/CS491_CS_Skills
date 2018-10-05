@@ -1,18 +1,3 @@
-#include <stdio.h>
-#include <string>
-#define _USE_MATH_DEFINES
-#include <cmath>
-#include <iostream>
-
-using namespace std;
-
-#define GLM_FORCE_RADIANS
-#include "glm/vec2.hpp"
-#include "glm/vec3.hpp"
-#include "glm/mat4x4.hpp"
-#include "glm/gtc/matrix_transform.hpp"
-#include "glm/gtc/matrix_inverse.hpp"
-
 glm::vec3
 WhatPartOfALivesInBDir( glm::vec3 a, glm::vec3 b )
 {
@@ -65,19 +50,4 @@ WhoAmI( std::string &yourName, std::string &yourEmailAddress )
 {
 	yourName = "David Baugh";
 	yourEmailAddress = "baughd@oregonstate.edu" ;
-}
-
-int main()
-{
-	glm::vec3 a = glm::vec3(0,1,0);
-	glm::vec3 b = glm::vec3(-0.5,1,13);
-	glm::vec3 c = glm::vec3(11,11,1);
-	glm::vec3 d = glm::vec3(1,1,1);
-	glm::vec3 vecAnswer = WhatPartOfALivesInBDir(a, b);
-	float floatAnswer = DistanceFromPointToPlane(a, b, c, d);
-	bool boolAnswer = IsPointInTriangle(a, b, c, d);
-	glm::vec3 unitnormal = UnitSurfaceNormal(a,b,c);
-	cout << unitnormal.x << " y:" << unitnormal.y << " z:" << unitnormal.z;
-	//cout << vecAnswer.x << " " << vecAnswer.y << " " << vecAnswer.z;
-	return 0;
 }
